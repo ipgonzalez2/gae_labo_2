@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear factura</title>
+    <script>
+        function check(){
+            const edNombre = document.getElementById("edNombre");
+            const edCIF = document.getElementById("edCIF");
+            const edDireccion = document.getElementById("edDireccion");
+            const edPoblacion = document.getElementById("edPoblacion");
+            const edProvincia = document.getElementById("edProvincia");
+            const edCP = document.getElementById("edCP");
+            const edPais = document.getElementById("edPais");
+            const edContacto = document.getElementById("edContacto");
+            const edEmail = document.getElementById("edEmail");
+            const edTelefono = document.getElementById("edTelefono");
+            const edNombreCliente = document.getElementById("edNombreCliente");
+            const edCIFCliente = document.getElementById("edCIFCliente");
+            const edDireccionCliente = document.getElementById("edDireccionCliente");
+            const edPoblacionCliente = document.getElementById("edPoblacionCliente");
+            const edProvinciaCliente = document.getElementById("edProvinciaCliente");
+            const edCPCliente = document.getElementById("edCPCliente");
+            const edPaisCliente = document.getElementById("edPaisCliente");
+            const edContactoCliente = document.getElementById("edContactoCliente");
+            const edEmailCliente = document.getElementById("edEmailCliente");
+            const edTelefonoCliente = document.getElementById("edTelefonoCliente");
+            const edConcepto = document.getElementById("edConcepto");
+            const edPrecio = document.getElementById("edPrecio");
+            const edUnidad = document.getElementById("edUnidad");
+            const edImporteBruto = document.getElementById("edImporteBruto");
+            const edPorcentaje = document.getElementById("edPorcentaje");
+            const edImporteTotal = document.getElementById("edImporteTotal");
+
+            return edNombre.value.trim() != 0 && edCIF.value.trim() != 0 && edDireccion.value.trim() != 0 && edPoblacion.value.trim() != 0
+                && edProvincia.value.trim() != 0 && edCP.value.trim() != 0 && edPais.value.trim() != 0 && edContacto.value.trim() != 0
+                && edEmail.value.trim() != 0 && edTelefono.value.trim() != 0 && edNombreCliente.value.trim() != 0 && edCIFCliente.value.trim() != 0
+                && edDireccionCliente.value.trim() != 0 && edPoblacionCliente.value.trim() != 0 && edProvinciaCliente.value.trim() != 0
+                && edCPCliente.value.trim() != 0 && edPaisCliente.value.trim() != 0 && edContactoCliente.value.trim() != 0 && edEmailCliente.value.trim() != 0
+                && edTelefonoCliente.value.trim() != 0 && edConcepto.value.trim() != 0 && edPrecio.value.trim() != 0 && edUnidad.value.trim() != 0
+                && edImporteBruto.value.trim() != 0 && edPorcentaje.value.trim() != 0 && edImporteTotal.value.trim() != 0;
+        }
+    </script>
+</head>
+<body>
+    <h1>Crear factura</h1>
+
+    <form id="frmFactura"
+        action="/factura"
+        method="post"
+        onsubmit="return check()">
+
+        <h4> Datos del emisor </h4>
+
+        <label for="edNombre">Nombre: </label>
+        <input type="text" id="edNombre" name="edNombre" />
+        <label for="edCIF">CIF: </label>
+        <input type="text" id="edCIF" name="edCIF" /><br><br>
+        <label for="edDireccion">Dirección: </label>
+        <input type="text" id="edDireccion" name="edDireccion" />
+        <label for="edPoblacion">Población: </label>
+        <input type="text" id="edPoblacion" name="edPoblacion" />
+        <label for="edProvincia">Provincia: </label>
+        <input type="text" id="edProvincia" name="edProvincia" />
+        <label for="edCP">CP: </label>
+        <input type="number" id="edCP" name="edCP" />
+        <label for="edPais">País: </label>
+        <input type="text" id="edPais" name="edPais" /><br><br>
+        <label for="edContacto">Persona de contacto: </label>
+        <input type="text" id="edContacto" name="edContacto" />
+        <label for="edEmail">Email: </label>
+        <input type="email" id="edEmail" name="edEmail" />
+        <label for="edTelefono">Teléfono: </label>
+        <input type="number" id="edTelefono" name="edTelefono" />
+
+        <h4> Datos del cliente </h4>
+
+        <label for="edNombreCliente">Nombre: </label>
+        <input type="text" id="edNombreCliente" name="edNombreCliente" />
+        <label for="edCIFCliente">CIF: </label>
+        <input type="text" id="edCIFCliente" name="edCIFCliente" /><br><br>
+        <label for="edDireccionCliente">Dirección: </label>
+        <input type="text" id="edDireccionCliente" name="edDireccionCliente" />
+        <label for="edPoblacionCliente">Población: </label>
+        <input type="text" id="edPoblacionCliente" name="edPoblacionCliente" />
+        <label for="edProvinciaCliente">Provincia: </label>
+        <input type="text" id="edProvinciaCliente" name="edProvinciaCliente" />
+        <label for="edCPCliente">CP: </label>
+        <input type="number" id="edCPCliente" name="edCPCliente" />
+        <label for="edPaisCliente">País: </label>
+        <input type="text" id="edPaisCliente" name="edPaisCliente" /><br><br>
+        <label for="edContactoCliente">Persona de contacto: </label>
+        <input type="text" id="edContactoCliente" name="edContactoCliente" />
+        <label for="edEmailCliente">Email: </label>
+        <input type="email" id="edEmailCliente" name="edEmailCliente" />
+        <label for="edTelefonoCliente">Teléfono: </label>
+        <input type="number" id="edTelefonoCliente" name="edTelefonoCliente" />
+
+         <h4> Línea de factura </h4>
+
+        <label for="edConcepto">Concepto: </label>
+        <input type="text" id="edConcepto" name="edConcepto" />
+        <label for="edPrecio">Precio: </label>
+        <input type="number" id="edPrecio" name="edPrecio" />
+        <label for="edUnidad">Unidades: </label>
+        <input type="number" id="edUnidad" name="edUnidad" /><br><br>
+        <label for="edImporteBruto">Importe bruto: </label>
+        <input type="number" id="edImporteBruto" name="edImporteBruto" />
+        <label for="edPorcentaje">Porcentaje IVA: </label>
+        <input type="number" id="edPorcentaje" name="edPorcentaje" />
+        <label for="edImporteTotal">Importe total: </label>
+        <input type="number" id="edImporteTotal" name="edImporteTotal" /><br><br>
+
+        <input type="submit" value="Crear" />
+    </form>
+</body>
+</html>
